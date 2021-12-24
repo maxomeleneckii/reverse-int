@@ -1,9 +1,11 @@
 module.exports = function reverse(n) {
-    //     return (n > 0 ? -1 : 1) * parseInt(n.toString().split('').reverse().join(''));
-    // };
-    if (n > 0) {
-        return (1 || -1) * parseInt(n.toString().split('').reverse().join(''));
-    } else if (n < 0) {
-        return (1 || -1) * parseInt(n.toString().split('').reverse().join(''));
+    let res = '';
+    n = n.toString();
+    if (n < 0) {
+        n = (-n).toString();
     }
+    for (let i = n.length - 1; i >= 0; i--) {
+        res = res + n[i];
+    }
+    return res;
 };
